@@ -41,11 +41,17 @@
     }
 
     .nav-logo {
-      display: flex; align-items: center;
-      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'General Sans', 'Inter', sans-serif; font-weight: 800; font-size: 18px;
+      text-decoration: none; color: var(--black);
     }
 
-    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-logo-icon {
+      width: 32px; height: 32px; background: var(--orange);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+
+    .nav-logo-icon svg { width: 18px; height: 18px; fill: white; }
 
     .nav-links {
       display: flex; align-items: center; gap: 32px; list-style: none;
@@ -524,11 +530,10 @@
     }
 
     .footer-logo {
-      display: flex; align-items: center;
-      text-decoration: none;
+      font-family: 'General Sans', 'Inter', sans-serif; font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; color: var(--black);
     }
-
-    .footer-logo img { height: 28px; width: auto; display: block; }
 
     .footer-links {
       display: flex; gap: 24px; list-style: none;
@@ -561,7 +566,10 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="https://ohmbdawxholfwmgmyfil.supabase.co/storage/v1/object/public/branding/EdgeOps-logo.png" alt="EdgeOps" />
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2 5h12v2H6zm3 5h6v2H9z"/></svg>
+      </div>
+      EdgeOps
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
@@ -836,10 +844,14 @@
   <footer>
     <div class="footer-inner">
       <a href="#" class="footer-logo">
-        <img src="https://ohmbdawxholfwmgmyfil.supabase.co/storage/v1/object/public/branding/EdgeOps-logo.png" alt="EdgeOps" />
+        <div class="nav-logo-icon" style="width:26px;height:26px;">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white;"><path d="M4 6h16v2H4zm2 5h12v2H6zm3 5h6v2H9z"/></svg>
+        </div>
+        EdgeOps
       </a>
       <ul class="footer-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#pricing">Pricing</a></li>
       </ul>
       <p class="footer-copy">© 2026 EdgeOps. All rights reserved.</p>

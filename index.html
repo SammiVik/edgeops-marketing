@@ -383,36 +383,6 @@
       gap: 64px; align-items: end; margin-bottom: 48px;
     }
 
-    .video-embed {
-      position: relative;
-      aspect-ratio: 16/9;
-      background: var(--black);
-      border-radius: 16px; overflow: hidden;
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.18);
-    }
-
-    .video-placeholder {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 16px;
-    }
-
-    .play-btn {
-      width: 72px; height: 72px;
-      background: var(--orange); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: transform 0.2s, background 0.2s;
-    }
-
-    .play-btn:hover { transform: scale(1.08); background: var(--orange-light); }
-
-    .play-btn svg { fill: white; width: 28px; height: 28px; margin-left: 4px; }
-
-    .video-caption {
-      font-size: 14px; color: #888; font-weight: 300;
-    }
-
     /* PRICING */
     .pricing { padding: 96px 48px; max-width: 1200px; margin: 0 auto; }
 
@@ -864,16 +834,8 @@
         </div>
         <p class="section-sub" style="margin-bottom:0;">Watch how a scaffolding business goes from chaos to clarity — from first quote through to final sign-off — in under 5 minutes.</p>
       </div>
-      <div class="video-embed">
-        <div class="video-placeholder">
-          <div class="play-btn" onclick="Supademo.open('cmmlymtel4ualqfzsli3x3nmh')" role="button" aria-label="Launch interactive demo">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <p class="video-caption">Click to launch the interactive tour</p>
-          <button onclick="Supademo.open('cmmlymtel4ualqfzsli3x3nmh')" style="margin-top:8px; font-family:'General Sans','Inter',sans-serif; font-size:14px; font-weight:500; background:var(--orange); color:white; border:none; padding:10px 24px; border-radius:8px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='#FF6B3D'" onmouseout="this.style.background='var(--orange)'">
-            Try the interactive tour →
-          </button>
-        </div>
+      <div style="border-radius: 16px; overflow: hidden; border: 1px solid #2a2a2a; box-shadow: 0 24px 80px rgba(0,0,0,0.18);">
+        <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(53.7153% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/mFjxSydheV9ZK25ATcjr?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Invite a New Team Member to EdgeOps" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
       </div>
     </div>
   </section>
@@ -1008,6 +970,5 @@
     </div>
   </footer>
 
-  <script src="https://script.supademo.com/supademo.js"></script>
 </body>
 </html>

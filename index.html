@@ -184,109 +184,6 @@
       font-family: 'General Sans', 'Inter', sans-serif;
     }
 
-    /* FAKE APP UI */
-    .app-ui {
-      display: grid; grid-template-columns: 220px 1fr;
-      min-height: 420px;
-    }
-
-    .app-sidebar {
-      background: #FAFAF8; border-right: 1px solid var(--border);
-      padding: 20px 0;
-    }
-
-    .app-sidebar-header {
-      padding: 0 20px 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
-    }
-
-    .app-sidebar-logo {
-      font-family: 'General Sans', 'Inter', sans-serif; font-weight: 700; font-size: 15px;
-      display: flex; align-items: center; gap: 8px;
-    }
-
-    .app-sidebar-logo-icon {
-      width: 24px; height: 24px; background: var(--orange);
-      border-radius: 6px; display: flex; align-items: center; justify-content: center;
-    }
-
-    .sidebar-nav-item {
-      padding: 8px 20px; font-size: 13px; cursor: pointer;
-      display: flex; align-items: center; gap: 10px; color: var(--gray);
-      transition: background 0.15s;
-    }
-
-    .sidebar-nav-item:hover { background: var(--border); }
-
-    .sidebar-nav-item.active {
-      color: var(--black); font-weight: 500;
-      background: white; border-right: 2px solid var(--orange);
-    }
-
-    .sidebar-nav-icon {
-      width: 16px; height: 16px; border-radius: 4px;
-      background: currentColor; opacity: 0.3;
-    }
-
-    .sidebar-section-label {
-      padding: 16px 20px 6px; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase; color: #B0AEA8;
-    }
-
-    .app-main { padding: 24px; background: white; }
-
-    .app-topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 24px;
-    }
-
-    .app-title { font-family: 'General Sans', 'Inter', sans-serif; font-weight: 700; font-size: 20px; }
-
-    .app-btn-sm {
-      background: var(--orange); color: white;
-      font-size: 12px; font-weight: 500; padding: 7px 14px;
-      border-radius: 6px; border: none; cursor: pointer; font-family: 'General Sans', 'Inter', sans-serif;
-    }
-
-    .app-stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px;
-    }
-
-    .app-stat {
-      background: var(--light); border-radius: 8px; padding: 14px;
-    }
-
-    .app-stat-label { font-size: 11px; color: var(--gray); margin-bottom: 4px; font-weight: 500; }
-    .app-stat-value { font-family: 'General Sans', 'Inter', sans-serif; font-weight: 700; font-size: 22px; }
-    .app-stat-value.orange { color: var(--orange); }
-
-    .app-table-header {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 80px;
-      padding: 8px 12px; background: var(--light); border-radius: 6px 6px 0 0;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
-      text-transform: uppercase; color: var(--gray);
-      border: 1px solid var(--border); border-bottom: none;
-    }
-
-    .app-table-row {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 80px;
-      padding: 10px 12px; font-size: 13px;
-      border: 1px solid var(--border); border-top: none;
-      align-items: center; transition: background 0.15s;
-    }
-
-    .app-table-row:hover { background: #FAFAF8; }
-
-    .status-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 3px 8px; border-radius: 100px; font-size: 11px; font-weight: 500;
-    }
-
-    .status-active { background: #E8F5E9; color: #2E7D32; }
-    .status-pending { background: #FFF3E0; color: #E65100; }
-    .status-scheduled { background: #E3F2FD; color: #1565C0; }
-
-    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-
     /* FEATURES */
     .features {
       padding: 96px 48px; max-width: 1200px; margin: 0 auto;
@@ -445,22 +342,13 @@
 
     .pricing-cta:hover { transform: translateY(-2px); }
 
-    .pricing-cta-dark {
-      background: var(--black); color: white;
-    }
-
+    .pricing-cta-dark { background: var(--black); color: white; }
     .pricing-cta-dark:hover { background: #2a2a2a; }
 
-    .pricing-cta-outline {
-      border: 1.5px solid var(--border); color: var(--black);
-    }
-
+    .pricing-cta-outline { border: 1.5px solid var(--border); color: var(--black); }
     .pricing-cta-outline:hover { border-color: var(--black); }
 
-    .pricing-cta-orange {
-      background: var(--orange); color: white;
-    }
-
+    .pricing-cta-orange { background: var(--orange); color: white; }
     .pricing-cta-orange:hover { background: var(--orange-light); }
 
     /* CTA */
@@ -491,10 +379,7 @@
     }
 
     .cta h2 { color: white; margin: 0 auto 16px; text-align: center; }
-
-    .cta .section-sub {
-      color: #888; text-align: center; margin: 0 auto 40px;
-    }
+    .cta .section-sub { color: #888; text-align: center; margin: 0 auto 40px; }
 
     .cta-actions {
       display: flex; gap: 16px; align-items: center; justify-content: center;
@@ -535,9 +420,7 @@
       text-decoration: none; color: var(--black);
     }
 
-    .footer-links {
-      display: flex; gap: 24px; list-style: none;
-    }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
 
     .footer-links a {
       font-size: 13px; color: var(--gray); text-decoration: none;
@@ -603,102 +486,13 @@
             <span class="dot-yellow"></span>
             <span class="dot-green"></span>
           </div>
-          <div class="browser-url">app.edgeops.com.au/schedule</div>
+          <div class="browser-url">app.edgeops.com.au/dashboard</div>
         </div>
-        <div class="app-ui">
-          <div class="app-sidebar">
-            <div class="app-sidebar-header">
-              <div class="app-sidebar-logo">
-                <div class="app-sidebar-logo-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M4 6h16v2H4zm2 5h12v2H6zm3 5h6v2H9z"/></svg>
-                </div>
-                EdgeOps
-              </div>
-            </div>
-            <div class="sidebar-section-label">Operations</div>
-            <div class="sidebar-nav-item active">
-              <div class="sidebar-nav-icon" style="background: var(--orange); opacity: 1; border-radius: 3px;"></div>
-              Schedule
-            </div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Jobs
-            </div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Crew
-            </div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Equipment
-            </div>
-            <div class="sidebar-section-label">Management</div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Clients
-            </div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Invoices
-            </div>
-            <div class="sidebar-nav-item">
-              <div class="sidebar-nav-icon"></div>
-              Reports
-            </div>
-          </div>
-          <div class="app-main">
-            <div class="app-topbar">
-              <div class="app-title">Active Jobs</div>
-              <button class="app-btn-sm">+ New Job</button>
-            </div>
-            <div class="app-stats">
-              <div class="app-stat">
-                <div class="app-stat-label">Active Sites</div>
-                <div class="app-stat-value orange">24</div>
-              </div>
-              <div class="app-stat">
-                <div class="app-stat-label">Crew Deployed</div>
-                <div class="app-stat-value">47</div>
-              </div>
-              <div class="app-stat">
-                <div class="app-stat-label">Scheduled This Week</div>
-                <div class="app-stat-value">12</div>
-              </div>
-              <div class="app-stat">
-                <div class="app-stat-label">Pending Sign-off</div>
-                <div class="app-stat-value">3</div>
-              </div>
-            </div>
-            <div class="app-table-header">
-              <span>Job / Site</span>
-              <span>Client</span>
-              <span>Start Date</span>
-              <span>Status</span>
-              <span>Crew</span>
-            </div>
-            <div class="app-table-row">
-              <span style="font-weight:500;">CBD Tower — Levels 12–18</span>
-              <span style="color:var(--gray);">Multiplex</span>
-              <span style="color:var(--gray);">Mar 10</span>
-              <span><span class="status-badge status-active"><span class="status-dot"></span>Active</span></span>
-              <span style="color:var(--gray);">8</span>
-            </div>
-            <div class="app-table-row">
-              <span style="font-weight:500;">Westfield Reno — Stage 2</span>
-              <span style="color:var(--gray);">Lendlease</span>
-              <span style="color:var(--gray);">Mar 14</span>
-              <span><span class="status-badge status-scheduled"><span class="status-dot"></span>Scheduled</span></span>
-              <span style="color:var(--gray);">6</span>
-            </div>
-            <div class="app-table-row">
-              <span style="font-weight:500;">Southbank Apartments</span>
-              <span style="color:var(--gray);">Probuild</span>
-              <span style="color:var(--gray);">Mar 18</span>
-              <span><span class="status-badge status-pending"><span class="status-dot"></span>Pending</span></span>
-              <span style="color:var(--gray);">5</span>
-            </div>
-          </div>
-        </div>
+        <img
+          src="https://ohmbdawxholfwmgmyfil.supabase.co/storage/v1/object/public/branding/Dashboard-screenshot.png"
+          alt="EdgeOps Dashboard"
+          style="width: 100%; display: block;"
+        />
       </div>
     </div>
   </div>

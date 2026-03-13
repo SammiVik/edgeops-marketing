@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://edgeops.com.au/sitemap.xml

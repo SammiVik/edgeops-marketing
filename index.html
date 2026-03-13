@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EdgeOps — Scaffolding Operations, Simplified</title>
+  <link rel="icon" type="image/svg+xml" href="icon-orange.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -41,17 +42,9 @@
     }
 
     .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'General Sans', 'Inter', sans-serif; font-weight: 800; font-size: 18px;
-      text-decoration: none; color: var(--black);
+      display: flex; align-items: center;
+      text-decoration: none;
     }
-
-    .nav-logo-icon {
-      width: 32px; height: 32px; background: var(--orange);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-    }
-
-    .nav-logo-icon svg { width: 18px; height: 18px; fill: white; }
 
     .nav-links {
       display: flex; align-items: center; gap: 32px; list-style: none;
@@ -415,9 +408,8 @@
     }
 
     .footer-logo {
-      font-family: 'General Sans', 'Inter', sans-serif; font-weight: 800; font-size: 16px;
-      display: flex; align-items: center; gap: 8px;
-      text-decoration: none; color: var(--black);
+      display: flex; align-items: center;
+      text-decoration: none;
     }
 
     .footer-links { display: flex; gap: 24px; list-style: none; }
@@ -449,10 +441,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2 5h12v2H6zm3 5h6v2H9z"/></svg>
-      </div>
-      EdgeOps
+      <img src="logo-light.svg" alt="EdgeOps" style="height: 38px;">
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
@@ -638,10 +627,7 @@
   <footer>
     <div class="footer-inner">
       <a href="#" class="footer-logo">
-        <div class="nav-logo-icon" style="width:26px;height:26px;">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white;"><path d="M4 6h16v2H4zm2 5h12v2H6zm3 5h6v2H9z"/></svg>
-        </div>
-        EdgeOps
+        <img src="logo-light.svg" alt="EdgeOps" style="height: 32px;">
       </a>
       <ul class="footer-links">
         <li><a href="#features">Features</a></li>

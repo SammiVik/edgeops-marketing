@@ -80,7 +80,7 @@ function FeatureCard({
 
       {/* Tag */}
       <div
-        className={`text-[11px] font-semibold tracking-[0.08em] uppercase mb-2.5 ${
+        className={`text-[13px] font-semibold tracking-[0.08em] uppercase mb-2.5 ${
           feature.dark ? 'text-orange-light' : 'text-orange'
         }`}
       >

@@ -19,11 +19,11 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
           {/* Left: logo + tagline */}
-          <div className="flex flex-col gap-4 max-w-xs">
+          <div className="flex flex-col gap-4" style={{ maxWidth: 420 }}>
             <a href="#" className="cursor-pointer inline-block">
-              <img src="/logo-white.svg" alt="EdgeOps" className="h-11" />
+              <img src="/logo-white.svg" alt="EdgeOps" className="h-14" />
             </a>
-            <p className="text-sm font-light leading-relaxed" style={{ color: '#666' }}>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#888', maxWidth: 420 }}>
               Scaffolding operations software for Australian businesses. Schedule jobs, manage crews, and stay on top of every site.
             </p>
           </div>

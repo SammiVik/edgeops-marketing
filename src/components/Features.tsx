@@ -154,26 +154,26 @@ export default function Features() {
         style={{ gap: 2, background: '#E8E6E0', borderColor: '#E8E6E0' }}
       >
         {/* Row 1: large (col-span-2) + small */}
-        <div className="md:col-span-2 flex">
+        <div className="md:col-span-2">
           <FeatureCard feature={features[0]} delay={0} />
         </div>
-        <div className="flex">
+        <div>
           <FeatureCard feature={features[1]} delay={80} />
         </div>
 
         {/* Row 2: three equal */}
-        <div className="flex">
+        <div>
           <FeatureCard feature={features[2]} delay={0} />
         </div>
-        <div className="flex">
+        <div>
           <FeatureCard feature={features[3]} delay={80} />
         </div>
-        <div className="flex">
+        <div>
           <FeatureCard feature={features[4]} delay={160} />
         </div>
 
         {/* Row 3: full-width dark card */}
-        <div className="col-span-1 md:col-span-3 flex">
+        <div className="md:col-span-3">
           <FeatureCard feature={features[5]} delay={0} />
         </div>
       </div>

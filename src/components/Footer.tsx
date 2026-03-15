@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -7,8 +8,8 @@ const navLinks = [
 ]
 
 const legalLinks = [
-  { label: 'Terms & Conditions', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms & Conditions', to: '/terms' },
+  { label: 'Privacy Policy', to: '/privacy' },
 ]
 
 export default function Footer() {
@@ -67,15 +68,15 @@ export default function Footer() {
         <ul className="flex items-center gap-5 list-none">
           {legalLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
+              <Link
+                to={link.to}
                 className="text-xs font-light transition-colors duration-150 cursor-pointer"
                 style={{ color: '#555' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#999')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#555')}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

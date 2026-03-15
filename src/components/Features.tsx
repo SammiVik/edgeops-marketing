@@ -60,7 +60,7 @@ function FeatureCard({
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`p-8 flex flex-col transition-all duration-700 ${
+      className={`p-8 flex flex-col h-full transition-all duration-700 ${
         feature.dark ? 'bg-brand-black text-white' : 'bg-white hover:bg-[#FDFCFA]'
       } ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -154,26 +154,26 @@ export default function Features() {
         style={{ gap: 2, background: '#E8E6E0', borderColor: '#E8E6E0' }}
       >
         {/* Row 1: large (col-span-2) + small */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 flex">
           <FeatureCard feature={features[0]} delay={0} />
         </div>
-        <div>
+        <div className="flex">
           <FeatureCard feature={features[1]} delay={80} />
         </div>
 
         {/* Row 2: three equal */}
-        <div>
+        <div className="flex">
           <FeatureCard feature={features[2]} delay={0} />
         </div>
-        <div>
+        <div className="flex">
           <FeatureCard feature={features[3]} delay={80} />
         </div>
-        <div>
+        <div className="flex">
           <FeatureCard feature={features[4]} delay={160} />
         </div>
 
         {/* Row 3: full-width dark card */}
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 flex">
           <FeatureCard feature={features[5]} delay={0} />
         </div>
       </div>

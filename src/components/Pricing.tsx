@@ -1,3 +1,6 @@
+import { Check } from 'lucide-react'
+import { useInView } from '../hooks/useInView'
+
 const plans = [
   {
     name: 'Starter',
@@ -13,6 +16,7 @@ const plans = [
     cta: 'Start free trial',
     ctaStyle: 'outline' as const,
     featured: false,
+    badge: null,
   },
   {
     name: 'Professional',
@@ -29,6 +33,7 @@ const plans = [
     cta: 'Start free trial',
     ctaStyle: 'orange' as const,
     featured: true,
+    badge: 'Most Popular',
   },
   {
     name: 'Business',
@@ -44,13 +49,22 @@ const plans = [
     cta: 'Start free trial',
     ctaStyle: 'dark' as const,
     featured: false,
+    badge: null,
   },
 ]
 
 export default function Pricing() {
+  const { ref: headerRef, inView: headerInView } = useInView()
+
   return (
-    <section id="pricing" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
-      <div className="text-center mb-14">
+    <section id="pricing" className="py-28 px-6 md:px-12 max-w-[1200px] mx-auto">
+      {/* Header */}
+      <div
+        ref={headerRef as React.RefObject<HTMLDivElement>}
+        className={`text-center mb-16 transition-all duration-700 ${
+          headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`}
+      >
         <div className="text-xs font-semibold tracking-widest uppercase text-orange mb-4">
           Pricing
         </div>
@@ -60,87 +74,112 @@ export default function Pricing() {
         >
           Simple pricing for every size operation
         </h2>
-        <p className="text-[17px] text-brand-gray leading-relaxed font-light mx-auto" style={{ maxWidth: 480 }}>
+        <p
+          className="text-[17px] text-brand-gray leading-relaxed font-light mx-auto"
+          style={{ maxWidth: 440 }}
+        >
           30-day free trial. No setup fees. No lock-in contracts.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {plans.map((plan) => (
-          <div
-            key={plan.name}
-            className={`rounded-2xl border-[1.5px] p-9 transition-all duration-200 hover:-translate-y-1 ${
-              plan.featured
-                ? 'border-brand-black bg-brand-black text-white'
-                : 'border-brand-border hover:border-[#aaa]'
-            }`}
-          >
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+        {plans.map((plan, i) => {
+          const { ref, inView } = useInView()
+          return (
             <div
-              className={`text-xs font-semibold tracking-widest uppercase mb-3 ${
-                plan.featured ? 'text-orange-light' : 'text-orange'
+              key={plan.name}
+              ref={ref as React.RefObject<HTMLDivElement>}
+              className={`relative rounded-2xl transition-all duration-700 ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              } ${
+                plan.featured
+                  ? 'bg-brand-black text-white border-2 border-brand-black shadow-[0_8px_48px_rgba(17,16,16,0.18)]'
+                  : 'bg-white border border-brand-border hover:border-[#aaa] hover:-translate-y-1'
               }`}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {plan.name}
-            </div>
+              {/* Most Popular badge */}
+              {plan.badge && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="inline-flex items-center gap-1.5 bg-orange text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">
+                    {plan.badge}
+                  </span>
+                </div>
+              )}
 
-            <div
-              className={`font-sans font-extrabold tracking-tight flex items-start gap-1 mb-1 ${
-                plan.featured ? 'text-white' : 'text-brand-black'
-              }`}
-              style={{ fontSize: 48, lineHeight: 1 }}
-            >
-              <sup className="text-xl font-bold mt-2.5">$</sup>
-              {plan.price}
-            </div>
-
-            <p className={`text-sm font-light mb-7 ${plan.featured ? 'text-[#999]' : 'text-brand-gray'}`}>
-              per month · AUD
-            </p>
-
-            <hr className={`mb-6 ${plan.featured ? 'border-[#333]' : 'border-brand-border'}`} />
-
-            <ul className="list-none mb-8 space-y-0">
-              {plan.features.map((feat) => (
-                <li
-                  key={feat}
-                  className={`text-sm py-1.5 flex items-center gap-2.5 font-light ${
-                    plan.featured ? 'text-[#ccc]' : ''
+              <div className={`p-8 ${plan.badge ? 'pt-9' : ''}`}>
+                {/* Plan name */}
+                <div
+                  className={`text-xs font-semibold tracking-widest uppercase mb-3 ${
+                    plan.featured ? 'text-orange-light' : 'text-orange'
                   }`}
                 >
-                  <span
-                    className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
-                      plan.featured ? 'bg-[#333]' : 'bg-brand-light'
-                    }`}
-                  >
-                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                      <path
-                        d="M1 4L3.5 6.5L9 1"
-                        stroke={plan.featured ? 'white' : '#111010'}
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  {feat}
-                </li>
-              ))}
-            </ul>
+                  {plan.name}
+                </div>
 
-            <a
-              href="https://app.edgeops.com.au/signup"
-              className={`block text-center font-sans text-[15px] font-medium px-6 py-3.5 rounded-[10px] transition-all duration-150 hover:-translate-y-0.5 ${
-                plan.ctaStyle === 'orange'
-                  ? 'bg-orange text-white hover:bg-orange-light'
-                  : plan.ctaStyle === 'dark'
-                  ? 'bg-brand-black text-white hover:bg-[#2a2a2a]'
-                  : 'border-[1.5px] border-brand-border text-brand-black hover:border-brand-black'
-              }`}
-            >
-              {plan.cta}
-            </a>
-          </div>
-        ))}
+                {/* Price */}
+                <div
+                  className={`font-sans font-extrabold tracking-tight flex items-start gap-0.5 leading-none mb-1 ${
+                    plan.featured ? 'text-white' : 'text-brand-black'
+                  }`}
+                >
+                  <span className="text-xl font-bold mt-2">$</span>
+                  <span style={{ fontSize: 52 }}>{plan.price}</span>
+                </div>
+                <p
+                  className={`text-sm font-light mb-7 ${
+                    plan.featured ? 'text-[#888]' : 'text-brand-gray'
+                  }`}
+                >
+                  per month · AUD
+                </p>
+
+                <hr className={`mb-6 ${plan.featured ? 'border-[#222]' : 'border-brand-border'}`} />
+
+                {/* Features */}
+                <ul className="space-y-2.5 mb-8">
+                  {plan.features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-3">
+                      <span
+                        className={`flex-shrink-0 mt-0.5 w-[18px] h-[18px] rounded-full flex items-center justify-center ${
+                          plan.featured ? 'bg-[#222]' : 'bg-brand-light'
+                        }`}
+                      >
+                        <Check
+                          size={10}
+                          strokeWidth={2.5}
+                          className={plan.featured ? 'text-white' : 'text-brand-black'}
+                        />
+                      </span>
+                      <span
+                        className={`text-sm font-light leading-snug ${
+                          plan.featured ? 'text-[#ccc]' : 'text-brand-gray'
+                        }`}
+                      >
+                        {feat}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <a
+                  href="https://app.edgeops.com.au/signup"
+                  className={`block text-center text-[15px] font-medium px-6 py-3.5 rounded-xl transition-all duration-150 hover:-translate-y-0.5 cursor-pointer ${
+                    plan.ctaStyle === 'orange'
+                      ? 'bg-orange text-white hover:bg-orange-light shadow-[0_2px_12px_rgba(240,78,35,0.3)]'
+                      : plan.ctaStyle === 'dark'
+                      ? 'bg-brand-black text-white hover:bg-[#2a2a2a]'
+                      : 'border border-brand-border text-brand-black hover:border-[#aaa] hover:bg-brand-light'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

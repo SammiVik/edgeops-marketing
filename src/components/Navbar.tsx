@@ -1,129 +1,115 @@
 import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 8)
+    const handler = () => setScrolled(window.scrollY > 16)
     window.addEventListener('scroll', handler)
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 ${
-        scrolled ? 'shadow-sm' : ''
-      }`}
-      style={{
-        background: 'rgba(255,255,255,0.92)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #E8E6E0',
-      }}
-    >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center flex-shrink-0">
-          <img src="/logo-marketing-nav.svg" alt="EdgeOps" className="h-[38px]" />
-        </a>
-
-        {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-8 list-none">
-          <li>
-            <a
-              href="#features"
-              className="text-sm font-medium text-brand-gray hover:text-brand-black transition-colors"
-            >
-              Features
-            </a>
-          </li>
-          <li>
-            <a
-              href="#demo"
-              className="text-sm font-medium text-brand-gray hover:text-brand-black transition-colors"
-            >
-              Demo
-            </a>
-          </li>
-          <li>
-            <a
-              href="#pricing"
-              className="text-sm font-medium text-brand-gray hover:text-brand-black transition-colors"
-            >
-              Pricing
-            </a>
-          </li>
-        </ul>
-
-        {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="https://app.edgeops.com.au"
-            className="text-sm font-medium text-brand-black px-4 py-2 rounded-lg hover:bg-brand-light transition-colors"
-          >
-            Log in
+    <>
+      <nav
+        className={`fixed top-4 left-4 right-4 z-50 rounded-2xl transition-all duration-300 ${
+          scrolled
+            ? 'shadow-[0_4px_32px_rgba(0,0,0,0.10)]'
+            : 'shadow-[0_2px_16px_rgba(0,0,0,0.06)]'
+        }`}
+        style={{
+          background: 'rgba(255,255,255,0.90)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(232,230,224,0.8)',
+        }}
+      >
+        <div className="max-w-[1200px] mx-auto px-5 h-14 flex items-center justify-between">
+          {/* Logo */}
+          <a href="#" className="flex items-center flex-shrink-0 cursor-pointer">
+            <img src="/logo-marketing-nav.svg" alt="EdgeOps" className="h-9" />
           </a>
-          <a
-            href="https://app.edgeops.com.au/signup"
-            className="text-sm font-medium bg-brand-black text-white px-5 py-2.5 rounded-lg hover:bg-[#2a2a2a] hover:-translate-y-px transition-all duration-150"
-          >
-            Start free trial →
-          </a>
-        </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-5 h-0.5 bg-brand-black transition-transform duration-200 ${
-              mobileOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-brand-black transition-opacity duration-200 ${
-              mobileOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-brand-black transition-transform duration-200 ${
-              mobileOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
-      </div>
+          {/* Desktop nav links — centred */}
+          <ul className="hidden md:flex items-center gap-7 list-none absolute left-1/2 -translate-x-1/2">
+            {['Features', 'Demo', 'Pricing'].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="text-sm font-medium text-brand-gray hover:text-brand-black transition-colors duration-150 cursor-pointer"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          className="md:hidden border-t"
-          style={{ borderColor: '#E8E6E0', background: 'rgba(255,255,255,0.97)' }}
-        >
-          <div className="px-6 py-4 flex flex-col gap-4">
-            <a href="#features" className="text-sm font-medium text-brand-gray" onClick={() => setMobileOpen(false)}>
-              Features
-            </a>
-            <a href="#demo" className="text-sm font-medium text-brand-gray" onClick={() => setMobileOpen(false)}>
-              Demo
-            </a>
-            <a href="#pricing" className="text-sm font-medium text-brand-gray" onClick={() => setMobileOpen(false)}>
-              Pricing
-            </a>
-            <hr style={{ borderColor: '#E8E6E0' }} />
-            <a href="https://app.edgeops.com.au" className="text-sm font-medium text-brand-black">
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2">
+            <a
+              href="https://app.edgeops.com.au"
+              className="text-sm font-medium text-brand-black px-4 py-2 rounded-lg hover:bg-brand-light transition-colors duration-150 cursor-pointer"
+            >
               Log in
             </a>
             <a
               href="https://app.edgeops.com.au/signup"
-              className="text-sm font-medium text-center bg-brand-black text-white px-5 py-3 rounded-lg"
+              className="text-sm font-medium bg-brand-black text-white px-4 py-2 rounded-lg hover:bg-[#2a2a2a] hover:-translate-y-px transition-all duration-150 cursor-pointer"
             >
               Start free trial →
             </a>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-brand-light transition-colors duration-150 cursor-pointer"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <X size={20} className="text-brand-black" />
+            ) : (
+              <Menu size={20} className="text-brand-black" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div
+          className="fixed top-[72px] left-4 right-4 z-40 rounded-2xl border p-5 flex flex-col gap-3"
+          style={{
+            background: 'rgba(255,255,255,0.97)',
+            backdropFilter: 'blur(16px)',
+            borderColor: '#E8E6E0',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
+          }}
+        >
+          {['Features', 'Demo', 'Pricing'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-sm font-medium text-brand-gray py-1.5 cursor-pointer"
+              onClick={() => setMobileOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+          <hr style={{ borderColor: '#E8E6E0' }} />
+          <a href="https://app.edgeops.com.au" className="text-sm font-medium text-brand-black py-1.5 cursor-pointer">
+            Log in
+          </a>
+          <a
+            href="https://app.edgeops.com.au/signup"
+            className="text-sm font-medium text-center bg-brand-black text-white px-5 py-3 rounded-xl cursor-pointer"
+          >
+            Start free trial →
+          </a>
         </div>
       )}
-    </nav>
+    </>
   )
 }

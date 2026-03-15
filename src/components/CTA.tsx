@@ -1,45 +1,61 @@
+import { ArrowRight } from 'lucide-react'
+import { useInView } from '../hooks/useInView'
+
 export default function CTA() {
+  const { ref, inView } = useInView()
+
   return (
-    <section className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto text-center">
+    <section className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
       <div
-        className="bg-brand-black rounded-3xl px-12 py-20 relative overflow-hidden"
+        ref={ref as React.RefObject<HTMLDivElement>}
+        className={`relative overflow-hidden rounded-3xl px-8 md:px-16 py-20 text-center transition-all duration-700 ${
+          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`}
+        style={{ background: '#111010' }}
       >
         {/* Radial glows */}
         <div
-          className="pointer-events-none absolute -top-[100px] -right-[100px] w-[400px] h-[400px]"
-          style={{ background: 'radial-gradient(circle, rgba(240,78,35,0.25) 0%, transparent 70%)' }}
+          className="pointer-events-none absolute -top-24 -right-24 w-[480px] h-[480px]"
+          style={{ background: 'radial-gradient(circle, rgba(240,78,35,0.22) 0%, transparent 65%)' }}
         />
         <div
-          className="pointer-events-none absolute -bottom-[80px] -left-[80px] w-[300px] h-[300px]"
-          style={{ background: 'radial-gradient(circle, rgba(240,78,35,0.15) 0%, transparent 70%)' }}
+          className="pointer-events-none absolute -bottom-20 -left-20 w-[360px] h-[360px]"
+          style={{ background: 'radial-gradient(circle, rgba(240,78,35,0.14) 0%, transparent 65%)' }}
         />
 
+        {/* Content */}
         <div className="relative z-10">
-          <div className="text-xs font-semibold tracking-widest uppercase text-orange-light mb-4">
+          <div className="text-xs font-semibold tracking-widest uppercase text-orange-light mb-5">
             Get started
           </div>
 
           <h2
-            className="font-sans font-extrabold leading-[1.1] tracking-tight text-white mx-auto mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}
+            className="font-sans font-extrabold leading-[1.1] tracking-tight text-white mx-auto mb-5"
+            style={{ fontSize: 'clamp(32px, 4vw, 52px)', maxWidth: 560 }}
           >
-            Run a tighter operation,<br />starting today
+            Run a tighter operation,{' '}
+            <br className="hidden md:block" />
+            starting today
           </h2>
 
-          <p className="text-[17px] font-light leading-relaxed mx-auto mb-10" style={{ color: '#888', maxWidth: 480 }}>
+          <p
+            className="text-[17px] font-light leading-relaxed mx-auto mb-10"
+            style={{ color: '#777', maxWidth: 420 }}
+          >
             30-day free trial. No credit card required. Set up in under 10 minutes.
           </p>
 
-          <div className="flex flex-wrap gap-4 items-center justify-center">
+          <div className="flex flex-wrap gap-3 items-center justify-center">
             <a
               href="https://app.edgeops.com.au/signup"
-              className="text-base font-medium bg-orange text-white px-8 py-3.5 rounded-[10px] hover:bg-orange-light hover:-translate-y-0.5 transition-all duration-150"
+              className="inline-flex items-center gap-2 text-[15px] font-medium bg-orange text-white px-7 py-3.5 rounded-xl hover:bg-orange-light hover:-translate-y-0.5 transition-all duration-150 cursor-pointer shadow-[0_2px_20px_rgba(240,78,35,0.35)]"
             >
-              Start free trial →
+              Start free trial
+              <ArrowRight size={15} />
             </a>
             <a
               href="#demo"
-              className="text-base font-medium text-white px-7 py-3.5 rounded-[10px] border-[1.5px] border-[#333] hover:border-[#666] hover:-translate-y-0.5 transition-all duration-150"
+              className="text-[15px] font-medium text-white px-7 py-3.5 rounded-xl border border-[#333] hover:border-[#555] hover:bg-[#1a1a1a] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer"
             >
               Watch demo
             </a>

@@ -173,7 +173,7 @@ export default function Features() {
         </div>
 
         {/* Row 3: full-width dark card */}
-        <div className="md:col-span-3 flex">
+        <div className="col-span-1 md:col-span-3 flex">
           <FeatureCard feature={features[5]} delay={0} />
         </div>
       </div>

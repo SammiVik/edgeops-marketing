@@ -76,12 +76,12 @@ export default function Privacy() {
       <h2>7. Disclosure of Personal Information</h2>
       <p>We do not sell your personal information. We may disclose it to the following third parties to operate our platform:</p>
       <ul>
-        <li>Stripe, Inc. — payment processing</li>
-        <li>Twilio Inc. — SMS delivery</li>
-        <li>Resend — transactional email delivery</li>
-        <li>Supabase Inc. — database hosting and authentication</li>
-        <li>Sentry — error monitoring</li>
-        <li>Vercel — website and application hosting</li>
+        <li>Stripe, Inc.: payment processing</li>
+        <li>Twilio Inc.: SMS delivery</li>
+        <li>Resend: transactional email delivery</li>
+        <li>Supabase Inc.: database hosting and authentication</li>
+        <li>Sentry: error monitoring</li>
+        <li>Vercel: website and application hosting</li>
       </ul>
       <p>These providers are engaged to help us deliver the platform and are not permitted to use your information for their own purposes beyond providing their services to us.</p>
       <p>We may also disclose personal information if required by law, a court order, or in connection with legal proceedings.</p>
@@ -97,7 +97,7 @@ export default function Privacy() {
       <p>To exercise any of these rights, contact us at <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a>.</p>
 
       <h2>9. Cookies & Tracking</h2>
-      <p>Our website may use cookies and similar technologies to improve your experience and collect usage data. You can configure your browser to refuse cookies, though this may affect platform functionality. We use analytics tools solely to understand platform usage and improve our product — we do not use advertising cookies or sell data to advertisers.</p>
+      <p>Our website may use cookies and similar technologies to improve your experience and collect usage data. You can configure your browser to refuse cookies, though this may affect platform functionality. We use analytics tools solely to understand platform usage and improve our product. We do not use advertising cookies or sell data to advertisers.</p>
 
       <h2>10. Retention</h2>
       <p>We retain personal information for as long as your account is active or as needed to provide our services. We may retain certain information after account closure to comply with legal obligations, resolve disputes, or enforce our agreements. You may request deletion of your data by contacting us directly.</p>

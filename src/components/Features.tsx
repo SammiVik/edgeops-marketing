@@ -6,7 +6,7 @@ const features = [
     icon: Calendar,
     tag: 'Scheduling',
     title: 'Visual job scheduling, without the whiteboard',
-    desc: 'Drag-and-drop scheduling across crews and sites. See conflicts, availability, and gaps at a glance — no more double-bookings or missed starts.',
+    desc: 'Drag-and-drop scheduling across crews and sites. See conflicts, availability, and gaps at a glance. No more double-bookings or missed starts.',
     large: true,
   },
   {
@@ -20,7 +20,7 @@ const features = [
     icon: ClipboardList,
     tag: 'Job Tracking',
     title: 'Every job, from quote to sign-off',
-    desc: 'Track job progress, log variation requests, capture site photos, and get digital sign-off — all in one place.',
+    desc: 'Track job progress, log variation requests, capture site photos, and get digital sign-off. All in one place.',
     large: false,
   },
   {
@@ -34,14 +34,14 @@ const features = [
     icon: MessageSquare,
     tag: 'Builder Follow-ups',
     title: 'Automated SMS follow-ups with builders',
-    desc: 'Stop chasing builders by phone. Automated SMS check-ins confirm dismantle dates and update your schedule — builders respond with one tap.',
+    desc: 'Stop chasing builders by phone. Automated SMS check-ins confirm dismantle dates and update your schedule. Builders respond with one tap.',
     large: false,
   },
   {
     icon: BarChart3,
     tag: 'Reporting',
     title: 'Insights to run a tighter operation',
-    desc: 'Builder reliability, job move reasons, crew utilisation — the numbers you need to make better decisions, without building spreadsheets.',
+    desc: 'Builder reliability, job move reasons, crew utilisation. The numbers you need to make better decisions, without building spreadsheets.',
     large: true,
     dark: true,
   },
@@ -80,7 +80,7 @@ function FeatureCard({
 
       {/* Tag */}
       <div
-        className={`text-[13px] font-semibold tracking-[0.08em] uppercase mb-2.5 ${
+        className={`text-[15px] font-semibold tracking-[0.08em] uppercase mb-2.5 ${
           feature.dark ? 'text-orange-light' : 'text-orange'
         }`}
       >
@@ -144,7 +144,7 @@ export default function Features() {
           Everything your team needs on site and off
         </h2>
         <p className="text-[17px] text-brand-gray leading-relaxed font-light" style={{ maxWidth: 460 }}>
-          Built for the way scaffolding businesses actually operate — from yard to rooftop.
+          Built for the way scaffolding businesses actually operate. From the yard to the rooftop.
         </p>
       </div>
 

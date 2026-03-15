@@ -29,8 +29,8 @@ export default function Demo() {
             </h2>
           </div>
           <p className="text-[17px] text-brand-gray leading-relaxed font-light">
-            Watch how a scaffolding business goes from chaos to clarity — from first quote
-            through to final sign-off — in under 5 minutes.
+            Watch how a scaffolding business goes from chaos to clarity, from first quote
+            through to final sign-off, in under 5 minutes.
           </p>
         </div>
 

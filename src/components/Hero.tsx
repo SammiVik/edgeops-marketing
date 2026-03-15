@@ -41,7 +41,7 @@ export default function Hero() {
           style={{ maxWidth: 480 }}
         >
           The all-in-one platform for scaffolding businesses to schedule jobs,
-          manage crews, and stay on top of every site — without the spreadsheet chaos.
+          manage crews, and stay on top of every site. No spreadsheet chaos.
         </p>
 
         {/* CTAs */}

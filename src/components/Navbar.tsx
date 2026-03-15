@@ -32,7 +32,7 @@ export default function Navbar() {
             <img src="/logo-marketing-nav.svg" alt="EdgeOps" className="h-12" />
           </a>
 
-          {/* Desktop nav links — centred */}
+          {/* Desktop nav links - centred */}
           <ul className="hidden md:flex items-center gap-7 list-none absolute left-1/2 -translate-x-1/2">
             {['Features', 'Demo', 'Pricing'].map((item) => (
               <li key={item}>

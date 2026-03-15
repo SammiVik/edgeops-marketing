@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-5 h-14 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center flex-shrink-0 cursor-pointer">
-            <img src="/logo-marketing-nav.svg" alt="EdgeOps" className="h-9" />
+            <img src="/logo-marketing-nav.svg" alt="EdgeOps" className="h-12" />
           </a>
 
           {/* Desktop nav links — centred */}

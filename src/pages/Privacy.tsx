@@ -94,7 +94,7 @@ export default function Privacy() {
         <li>Request deletion of your personal information (subject to legal and contractual obligations)</li>
         <li>Opt out of marketing communications at any time</li>
       </ul>
-      <p>To exercise any of these rights, contact us at <a href="mailto:sammi@edgeops.com.au">sammi@edgeops.com.au</a>.</p>
+      <p>To exercise any of these rights, contact us at <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a>.</p>
 
       <h2>9. Cookies & Tracking</h2>
       <p>Our website may use cookies and similar technologies to improve your experience and collect usage data. You can configure your browser to refuse cookies, though this may affect platform functionality. We use analytics tools solely to understand platform usage and improve our product — we do not use advertising cookies or sell data to advertisers.</p>
@@ -108,7 +108,7 @@ export default function Privacy() {
       <h2>12. Contact Us</h2>
       <p>If you have questions about this Privacy Policy or wish to make a privacy complaint, please contact:</p>
       <p>Edge Ops<br />
-      Email: <a href="mailto:sammi@edgeops.com.au">sammi@edgeops.com.au</a><br />
+      Email: <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a><br />
       Website: <a href="https://edgeops.com.au">edgeops.com.au</a></p>
       <p>If you are not satisfied with our response, you may contact the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer">www.oaic.gov.au</a>.</p>
 

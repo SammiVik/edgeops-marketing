@@ -25,7 +25,7 @@ export default function Terms() {
       <ul>
         <li>Provide accurate, current, and complete information during registration</li>
         <li>Maintain the security of your login credentials</li>
-        <li>Notify us immediately of any unauthorised access to your account at <a href="mailto:sammi@edgeops.com.au">sammi@edgeops.com.au</a></li>
+        <li>Notify us immediately of any unauthorised access to your account at <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a></li>
         <li>Take responsibility for all activity that occurs under your account</li>
       </ul>
       <p>We reserve the right to suspend or terminate accounts where we reasonably suspect false, inaccurate, or fraudulent information has been provided.</p>
@@ -75,7 +75,7 @@ export default function Terms() {
 
       <h2>9. Service Availability & Support</h2>
       <p>We aim to provide reliable access to EdgeOps but do not guarantee uninterrupted or error-free service. We may temporarily suspend access for maintenance, upgrades, or circumstances outside our control. We will endeavour to provide advance notice of planned maintenance where practicable.</p>
-      <p>Support is provided via our in-app feedback tool and by email at <a href="mailto:sammi@edgeops.com.au">sammi@edgeops.com.au</a>. We aim to respond to support requests within 2 business days.</p>
+      <p>Support is provided via our in-app feedback tool and by email at <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a>. We aim to respond to support requests within 2 business days.</p>
 
       <h2>10. Limitation of Liability</h2>
       <p>To the maximum extent permitted by Australian law, EdgeOps shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the platform, including loss of profits, loss of data, or business interruption.</p>
@@ -117,7 +117,7 @@ export default function Terms() {
 
       <h2>16. Contact</h2>
       <p>Edge Ops<br />
-      Email: <a href="mailto:sammi@edgeops.com.au">sammi@edgeops.com.au</a><br />
+      Email: <a href="mailto:info@edgeops.com.au">info@edgeops.com.au</a><br />
       Website: <a href="https://edgeops.com.au">edgeops.com.au</a></p>
 
     </LegalLayout>

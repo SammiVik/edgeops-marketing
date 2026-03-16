@@ -88,8 +88,8 @@ export default function Hero() {
           squareSize={4}
           gridGap={6}
           color="#F04E23"
-          maxOpacity={0.07}
-          flickerChance={0.05}
+          maxOpacity={0.15}
+          flickerChance={0.3}
         />
       </div>
 

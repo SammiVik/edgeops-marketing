@@ -1,5 +1,6 @@
 import { ArrowRight, Play } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import { FlickeringGrid } from './flickering-grid'
 
 const phrases = [
   'wasting hours chasing builders.',
@@ -24,18 +25,15 @@ export default function Hero() {
     let cancelled = false
 
     function cycle() {
-      // Hold visible for 2500ms
       const t1 = setTimeout(() => {
         if (cancelled) return
         setPhase('exiting')
 
-        // Wait for exit transition (300ms)
         const t2 = setTimeout(() => {
           if (cancelled) return
           setIndex(i => (i + 1) % phrases.length)
           setPhase('entering')
 
-          // One frame, then switch to visible
           const t3 = setTimeout(() => {
             if (cancelled) return
             setPhase('visible')
@@ -79,7 +77,19 @@ export default function Hero() {
         }
 
   return (
-    <section className="pt-36 pb-0 overflow-hidden">
+    <section className="relative pt-36 pb-0 overflow-hidden">
+      {/* Flickering grid — covers headline/subtext/CTA area and bleeds slightly into pain points */}
+      <div className="absolute top-0 left-0 right-0 h-[720px] overflow-hidden pointer-events-none z-0">
+        <FlickeringGrid
+          className="w-full h-full"
+          squareSize={4}
+          gridGap={6}
+          color="#F04E23"
+          maxOpacity={0.15}
+          flickerChance={0.3}
+        />
+      </div>
+
       {/* Subtle dot-grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -92,7 +102,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 border border-brand-border bg-white text-brand-black text-xs font-semibold tracking-wider uppercase px-3.5 py-1.5 rounded-full mb-8 shadow-sm animate-fade-up">
           <span
@@ -141,13 +151,11 @@ export default function Hero() {
             Watch demo
           </a>
         </div>
-
       </div>
 
       {/* Pain points */}
       <div style={{ background: '#F5F4F0', borderTop: '1px solid #E8E5E0', borderBottom: '1px solid #E8E5E0' }}>
         <div className="max-w-[960px] mx-auto px-6 md:px-12 py-16">
-          {/* Eyebrow */}
           <p
             className="text-xs font-semibold mb-10"
             style={{ color: '#aaa', letterSpacing: '0.12em', textTransform: 'uppercase' }}
@@ -155,28 +163,25 @@ export default function Hero() {
             Sound familiar?
           </p>
 
-          {/* Row 1 */}
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ columnGap: 80 }}>
-            {/* Item 1 */}
             <div className="pb-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Wasting <span className="text-orange not-italic">hours</span> chasing builders every week?
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                The average scaffolding business burns 6+ hours on admin, calls, and paperwork. That's time you're not getting back.
+                The average scaffolding business burns 6+ hours on admin, calls, and paperwork. That’s time you’re not getting back.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 6+ hrs lost every week
               </span>
             </div>
 
-            {/* Item 2 */}
             <div className="pb-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Still <span className="text-orange not-italic">on the phone</span> every time a job changes?
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                Schedule changes shouldn't mean 20 minutes of calls. EdgeOps notifies your whole crew instantly via SMS — with a 98% open rate, they actually see it.
+                Schedule changes shouldn’t mean 20 minutes of calls. EdgeOps notifies your whole crew instantly via SMS — with a 98% open rate, they actually see it.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 98% SMS open rate
@@ -184,12 +189,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Divider */}
           <div style={{ borderTop: '1px solid #E8E5E0' }} />
 
-          {/* Row 2 */}
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ columnGap: 80 }}>
-            {/* Item 3 */}
             <div className="pt-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 How much are last-minute changes <span className="text-orange not-italic">costing you?</span>
@@ -202,13 +204,12 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Item 4 */}
             <div className="pt-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Still running your whole operation on a <span className="text-orange not-italic">spreadsheet?</span>
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                70% of construction delays come down to poor coordination. Built specifically for scaffolding — not generic software you've had to bend into shape.
+                70% of construction delays come down to poor coordination. Built specifically for scaffolding — not generic software you’ve had to bend into shape.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 70% of delays are avoidable
@@ -220,7 +221,6 @@ export default function Hero() {
 
       {/* Screenshot container */}
       <div className="relative animate-fade-up-4 pt-20">
-        {/* Gradient that fades screenshot into background */}
         <div
           className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-10"
           style={{ background: 'linear-gradient(to bottom, transparent, #FFFFFF)' }}
@@ -235,7 +235,6 @@ export default function Hero() {
               borderBottom: 'none',
             }}
           >
-            {/* Radial glow */}
             <div
               className="pointer-events-none absolute -top-32 -right-20 w-[500px] h-[500px]"
               style={{
@@ -243,7 +242,6 @@ export default function Hero() {
               }}
             />
 
-            {/* Browser chrome */}
             <div
               className="rounded-t-xl border border-b-0 overflow-hidden max-w-[960px] mx-auto relative"
               style={{
@@ -252,7 +250,6 @@ export default function Hero() {
                 boxShadow: '0 -8px 48px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
               }}
             >
-              {/* Browser toolbar */}
               <div
                 className="flex items-center gap-3 px-4 py-3 border-b"
                 style={{ background: '#F9F8F6', borderColor: '#E8E6E0' }}

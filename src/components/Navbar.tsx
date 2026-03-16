@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { HoverBorderGradient } from './hover-border-gradient'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -55,15 +54,12 @@ export default function Navbar() {
             >
               Log in
             </a>
-            <HoverBorderGradient
-              as="a"
+            <a
               href="https://app.edgeops.com.au/signup"
-              containerClassName="rounded-full"
-              className="bg-black text-white flex items-center space-x-2 px-6 py-2 text-sm font-medium"
-              duration={1.5}
+              className="text-sm font-medium bg-brand-black text-white px-4 py-2 rounded-lg hover:bg-[#2a2a2a] hover:-translate-y-px transition-all duration-150 cursor-pointer"
             >
-              <span>Start free trial →</span>
-            </HoverBorderGradient>
+              Start free trial →
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -106,15 +102,12 @@ export default function Navbar() {
           <a href="https://app.edgeops.com.au" className="text-sm font-medium text-brand-black py-1.5 cursor-pointer">
             Log in
           </a>
-          <HoverBorderGradient
-            as="a"
+          <a
             href="https://app.edgeops.com.au/signup"
-            containerClassName="rounded-full w-full justify-center"
-            className="bg-black text-white flex items-center justify-center space-x-2 px-6 py-2 text-sm font-medium w-full"
-            duration={1.5}
+            className="text-sm font-medium text-center bg-brand-black text-white px-5 py-3 rounded-xl cursor-pointer"
           >
-            <span>Start free trial →</span>
-          </HoverBorderGradient>
+            Start free trial →
+          </a>
         </div>
       )}
     </>

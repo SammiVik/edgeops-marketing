@@ -1,7 +1,6 @@
-import { Play } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { FlickeringGrid } from './flickering-grid'
-import { HoverBorderGradient } from './hover-border-gradient'
 
 const phrases = [
   'wasting hours chasing builders.',
@@ -26,18 +25,15 @@ export default function Hero() {
     let cancelled = false
 
     function cycle() {
-      // Hold visible for 2500ms
       const t1 = setTimeout(() => {
         if (cancelled) return
         setPhase('exiting')
 
-        // Wait for exit transition (300ms)
         const t2 = setTimeout(() => {
           if (cancelled) return
           setIndex(i => (i + 1) % phrases.length)
           setPhase('entering')
 
-          // One frame, then switch to visible
           const t3 = setTimeout(() => {
             if (cancelled) return
             setPhase('visible')
@@ -140,15 +136,13 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-3 items-center mb-16 animate-fade-up-3">
-          <HoverBorderGradient
-            as="a"
+          <a
             href="https://app.edgeops.com.au/signup"
-            containerClassName="rounded-full"
-            className="bg-black text-white flex items-center space-x-2 px-6 py-2 text-sm font-medium"
-            duration={1.5}
+            className="inline-flex items-center gap-2 bg-brand-black text-white text-[15px] font-medium px-6 py-3 rounded-xl hover:bg-[#2a2a2a] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer shadow-[0_2px_12px_rgba(17,16,16,0.2)]"
           >
-            <span>Start free trial →</span>
-          </HoverBorderGradient>
+            Start free trial
+            <ArrowRight size={15} />
+          </a>
           <a
             href="#demo"
             className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-black px-6 py-3 rounded-xl border border-brand-border hover:border-[#aaa] hover:bg-brand-light hover:-translate-y-0.5 transition-all duration-150 cursor-pointer"
@@ -157,13 +151,11 @@ export default function Hero() {
             Watch demo
           </a>
         </div>
-
       </div>
 
       {/* Pain points */}
       <div style={{ background: '#F5F4F0', borderTop: '1px solid #E8E5E0', borderBottom: '1px solid #E8E5E0' }}>
         <div className="max-w-[960px] mx-auto px-6 md:px-12 py-16">
-          {/* Eyebrow */}
           <p
             className="text-xs font-semibold mb-10"
             style={{ color: '#aaa', letterSpacing: '0.12em', textTransform: 'uppercase' }}
@@ -171,9 +163,7 @@ export default function Hero() {
             Sound familiar?
           </p>
 
-          {/* Row 1 */}
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ columnGap: 80 }}>
-            {/* Item 1 */}
             <div className="pb-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Wasting <span className="text-orange not-italic">hours</span> chasing builders every week?
@@ -186,7 +176,6 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Item 2 */}
             <div className="pb-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Still <span className="text-orange not-italic">on the phone</span> every time a job changes?
@@ -200,12 +189,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Divider */}
           <div style={{ borderTop: '1px solid #E8E5E0' }} />
 
-          {/* Row 2 */}
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ columnGap: 80 }}>
-            {/* Item 3 */}
             <div className="pt-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 How much are last-minute changes <span className="text-orange not-italic">costing you?</span>
@@ -218,7 +204,6 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Item 4 */}
             <div className="pt-10">
               <p className="font-bold text-brand-black text-[22px] leading-snug mb-3">
                 Still running your whole operation on a <span className="text-orange not-italic">spreadsheet?</span>
@@ -236,7 +221,6 @@ export default function Hero() {
 
       {/* Screenshot container */}
       <div className="relative animate-fade-up-4 pt-20">
-        {/* Gradient that fades screenshot into background */}
         <div
           className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-10"
           style={{ background: 'linear-gradient(to bottom, transparent, #FFFFFF)' }}
@@ -251,7 +235,6 @@ export default function Hero() {
               borderBottom: 'none',
             }}
           >
-            {/* Radial glow */}
             <div
               className="pointer-events-none absolute -top-32 -right-20 w-[500px] h-[500px]"
               style={{
@@ -259,7 +242,6 @@ export default function Hero() {
               }}
             />
 
-            {/* Browser chrome */}
             <div
               className="rounded-t-xl border border-b-0 overflow-hidden max-w-[960px] mx-auto relative"
               style={{
@@ -268,7 +250,6 @@ export default function Hero() {
                 boxShadow: '0 -8px 48px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
               }}
             >
-              {/* Browser toolbar */}
               <div
                 className="flex items-center gap-3 px-4 py-3 border-b"
                 style={{ background: '#F9F8F6', borderColor: '#E8E6E0' }}

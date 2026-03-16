@@ -81,8 +81,8 @@ export default function Hero() {
 
   return (
     <section className="relative pt-36 pb-0 overflow-hidden">
-      {/* Flickering grid — constrained to headline/subtext/CTA area only, does not extend into pain points */}
-      <div className="absolute top-0 left-0 right-0 h-[600px] overflow-hidden pointer-events-none z-0">
+      {/* Flickering grid — covers headline/subtext/CTA area and bleeds slightly into pain points */}
+      <div className="absolute top-0 left-0 right-0 h-[780px] overflow-hidden pointer-events-none z-0">
         <FlickeringGrid
           className="w-full h-full"
           squareSize={4}

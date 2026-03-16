@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
+import { HoverBorderGradient } from './hover-border-gradient'
 
 export default function CTA() {
   const { ref, inView } = useInView()
@@ -46,13 +46,15 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-wrap gap-3 items-center justify-center">
-            <a
+            <HoverBorderGradient
+              as="a"
               href="https://app.edgeops.com.au/signup"
-              className="inline-flex items-center gap-2 text-[15px] font-medium bg-orange text-white px-7 py-3.5 rounded-xl hover:bg-orange-light hover:-translate-y-0.5 transition-all duration-150 cursor-pointer shadow-[0_2px_20px_rgba(240,78,35,0.35)]"
+              containerClassName="rounded-full"
+              className="bg-black text-white flex items-center space-x-2 px-6 py-2 text-sm font-medium"
+              duration={1.5}
             >
-              Start free trial
-              <ArrowRight size={15} />
-            </a>
+              <span>Start free trial →</span>
+            </HoverBorderGradient>
             <a
               href="#demo"
               className="text-[15px] font-medium text-white px-7 py-3.5 rounded-xl border border-[#333] hover:border-[#555] hover:bg-[#1a1a1a] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer"

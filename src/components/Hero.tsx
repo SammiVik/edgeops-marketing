@@ -1,6 +1,7 @@
-import { ArrowRight, Play } from 'lucide-react'
+import { Play } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { FlickeringGrid } from './flickering-grid'
+import { HoverBorderGradient } from './hover-border-gradient'
 
 const phrases = [
   'wasting hours chasing builders.',
@@ -139,13 +140,15 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-3 items-center mb-16 animate-fade-up-3">
-          <a
+          <HoverBorderGradient
+            as="a"
             href="https://app.edgeops.com.au/signup"
-            className="inline-flex items-center gap-2 bg-brand-black text-white text-[15px] font-medium px-6 py-3 rounded-xl hover:bg-[#2a2a2a] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer shadow-[0_2px_12px_rgba(17,16,16,0.2)]"
+            containerClassName="rounded-full"
+            className="bg-black text-white flex items-center space-x-2 px-6 py-2 text-sm font-medium"
+            duration={1.5}
           >
-            Start free trial
-            <ArrowRight size={15} />
-          </a>
+            <span>Start free trial →</span>
+          </HoverBorderGradient>
           <a
             href="#demo"
             className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-black px-6 py-3 rounded-xl border border-brand-border hover:border-[#aaa] hover:bg-brand-light hover:-translate-y-0.5 transition-all duration-150 cursor-pointer"
@@ -176,7 +179,7 @@ export default function Hero() {
                 Wasting <span className="text-orange not-italic">hours</span> chasing builders every week?
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                The average scaffolding business burns 6+ hours on admin, calls, and paperwork. That's time you're not getting back.
+                The average scaffolding business burns 6+ hours on admin, calls, and paperwork. That’s time you’re not getting back.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 6+ hrs lost every week
@@ -189,7 +192,7 @@ export default function Hero() {
                 Still <span className="text-orange not-italic">on the phone</span> every time a job changes?
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                Schedule changes shouldn't mean 20 minutes of calls. EdgeOps notifies your whole crew instantly via SMS — with a 98% open rate, they actually see it.
+                Schedule changes shouldn’t mean 20 minutes of calls. EdgeOps notifies your whole crew instantly via SMS — with a 98% open rate, they actually see it.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 98% SMS open rate
@@ -221,7 +224,7 @@ export default function Hero() {
                 Still running your whole operation on a <span className="text-orange not-italic">spreadsheet?</span>
               </p>
               <p className="text-brand-gray text-sm font-light leading-relaxed">
-                70% of construction delays come down to poor coordination. Built specifically for scaffolding — not generic software you've had to bend into shape.
+                70% of construction delays come down to poor coordination. Built specifically for scaffolding — not generic software you’ve had to bend into shape.
               </p>
               <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(240,78,35,0.08)', color: '#F04E23', borderRadius: 20 }}>
                 70% of delays are avoidable

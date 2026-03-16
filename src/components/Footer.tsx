@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { HoverBorderGradient } from './hover-border-gradient'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -45,14 +45,15 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a
+            <HoverBorderGradient
+              as="a"
               href="https://app.edgeops.com.au/signup"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-orange text-white px-5 py-2.5 rounded-xl hover:bg-orange-light hover:-translate-y-px transition-all duration-150 cursor-pointer"
-              style={{ boxShadow: '0 2px 12px rgba(240,78,35,0.3)' }}
+              containerClassName="rounded-full"
+              className="bg-black text-white flex items-center space-x-2 px-6 py-2 text-sm font-medium"
+              duration={1.5}
             >
-              Start free trial
-              <ArrowRight size={14} />
-            </a>
+              <span>Start free trial →</span>
+            </HoverBorderGradient>
           </div>
         </div>
       </div>

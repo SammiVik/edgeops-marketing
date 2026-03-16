@@ -1,5 +1,6 @@
 import { ArrowRight, Play } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import { FlickeringGrid } from './flickering-grid'
 
 const phrases = [
   'wasting hours chasing builders.',
@@ -79,7 +80,17 @@ export default function Hero() {
         }
 
   return (
-    <section className="pt-36 pb-0 overflow-hidden">
+    <section className="relative pt-36 pb-0 overflow-hidden">
+      {/* Flickering grid background */}
+      <FlickeringGrid
+        className="z-0 absolute inset-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#F04E23"
+        maxOpacity={0.07}
+        flickerChance={0.05}
+      />
+
       {/* Subtle dot-grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -92,7 +103,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 border border-brand-border bg-white text-brand-black text-xs font-semibold tracking-wider uppercase px-3.5 py-1.5 rounded-full mb-8 shadow-sm animate-fade-up">
           <span

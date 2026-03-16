@@ -81,15 +81,17 @@ export default function Hero() {
 
   return (
     <section className="relative pt-36 pb-0 overflow-hidden">
-      {/* Flickering grid background */}
-      <FlickeringGrid
-        className="z-0 absolute inset-0 size-full"
-        squareSize={4}
-        gridGap={6}
-        color="#F04E23"
-        maxOpacity={0.07}
-        flickerChance={0.05}
-      />
+      {/* Flickering grid — constrained to headline/subtext/CTA area only, does not extend into pain points */}
+      <div className="absolute top-0 left-0 right-0 h-[600px] overflow-hidden pointer-events-none z-0">
+        <FlickeringGrid
+          className="w-full h-full"
+          squareSize={4}
+          gridGap={6}
+          color="#F04E23"
+          maxOpacity={0.07}
+          flickerChance={0.05}
+        />
+      </div>
 
       {/* Subtle dot-grid background */}
       <div

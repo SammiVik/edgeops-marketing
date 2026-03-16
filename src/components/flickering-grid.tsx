@@ -29,7 +29,9 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  // Start as true so the animation begins immediately on mount.
+  // The IntersectionObserver will pause it when scrolled out of view.
+  const [isInView, setIsInView] = useState(true);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
   const memoizedColor = useMemo(() => {
